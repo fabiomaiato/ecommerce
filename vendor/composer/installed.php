@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'fabiosbrito/ecommerce',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'name' => 'fabiomaiato/ecommerce',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '2662759867870e77810bc5cc0d3439f1e42b0b09',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'fabiosbrito/ecommerce' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+        'fabiomaiato/ecommerce' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '2662759867870e77810bc5cc0d3439f1e42b0b09',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
