@@ -13,12 +13,12 @@ class Mailer
 
 	private $mail;
 
-	public function __construct($toAddress, $toName, $subject, $tplName, $data = array())
+	public function __construct( $toAddress, $toName, $subject, $tplName, $data = array())
 	{
 
 		$config = array(
-			"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/email/",
-			"cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
+			"tpl_dir"       => $_SERVER[ "DOCUMENT_ROOT" ]."/views/email/",
+			"cache_dir"     => $_SERVER[ "DOCUMENT_ROOT" ]."/views-cache/",
 			"debug"         => false
 	    );
 
@@ -26,11 +26,11 @@ class Mailer
 
 		$tpl = new Tpl;
 
-		foreach ($data as $key => $value) {
+		foreach ( $data as $key => $value ) {
 			$tpl->assign($key, $value);
 		}
 
-		$html = $tpl->draw($tplName, true);
+		$html = $tpl->draw( $tplName, true );
 
 		$this->mail = new \PHPMailer;
 
@@ -68,20 +68,20 @@ class Mailer
 		$this->mail->Password = Mailer::PASSWORD;
 
 		//Set who the message is to be sent from
-		$this->mail->setFrom(Mailer::USERNAME, Mailer::NAME_FROM);
+		$this->mail->setFrom( Mailer::USERNAME, Mailer::NAME_FROM );
 
 		//Set an alternative reply-to address
 		//$this->mail->addReplyTo('replyto@example.com', 'First Last');
 
 		//Set who the message is to be sent to
-		$this->mail->addAddress($toAddress, $toName);
+		$this->mail->addAddress( $toAddress, $toName );
 
 		//Set the subject line
 		$this->mail->Subject = $subject;
 
 		//Read an HTML message body from an external file, convert referenced images to embedded,
 		//convert HTML into a basic plain-text alternative body
-		$this->mail->msgHTML($html);
+		$this->mail->msgHTML( $html );
 
 		//Replace the plain text body with one created manually
 		$this->mail->AltBody = 'This is a plain-text message body';

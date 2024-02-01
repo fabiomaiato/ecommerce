@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2017 Hcode Treinamentos. <a href="http://www.hcode.com.br" target="_blank">hcode.com.br</a></p>
+                        <p>&copy; 2023 Fábio Brito. <a href="https://mail.google.com/mail/" target="_blank">fabiosilbrito@gmail.com</a></p>
                     </div>
                 </div>
                 

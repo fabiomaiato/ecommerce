@@ -19,29 +19,39 @@ class Cart extends Model
 
 		$cart = new Cart();
 
-		if (isset($_SESSION[Cart::SESSION]) && (int)$_SESSION[Cart::SESSION]['idcart'] > 0) {
+		/** 
+		 * 1° - Verifica se a sessão foi criada e o carrinho já está na sessão - ( isset( $_SESSION[ Cart::SESSION ])
+		 * 2° - Se a sessão foi iniciada verificamos se existe um ID do carrinho dentro dela, se ele é > 0 (int), ou se o 
+		 * carrinho está 
+		 * vazio. - $_SESSION[ Cart::SESSION ][ 'idcart' ] > 0 )
+		 * 3° - Se as condições acima forem verdadeiras - a sessão existe e o ID for > 0 significa que o carrinho já foi inserido
+		 *  no banco
+		 * e ele está na sessão - [ 'idcart' ] > 0
+		 * 4° - Tudo certo apenas vamos carregando o carrinho. - $cart->get(( int )$_SESSION[ Cart::SESSION ][ 'idcart' ]);
+		**/
+		if ( isset( $_SESSION[ Cart::SESSION ]) && ( int )$_SESSION[ Cart::SESSION ][ 'idcart' ] > 0 ) {
 
-			$cart->get((int)$_SESSION[Cart::SESSION]['idcart']);
+			$cart->get(( int )$_SESSION[ Cart::SESSION ][ 'idcart' ]);
 
 		} else {
 
 			$cart->getFromSessionID();
 
-			if (!(int)$cart->getidcart() > 0) {
+			if ( !( int )$cart->getidcart() > 0 ) {
 
 				$data = [
-					'dessessionid'=>session_id()
+					'dessessionid' => session_id()
 				];
 
-				if (User::checkLogin(false)) {
+				if ( User::checkLogin( false )) {
 
 					$user = User::getFromSession();
 					
-					$data['iduser'] = $user->getiduser();	
+					$data[ 'iduser' ] = $user->getiduser();	
 
 				}
 
-				$cart->setData($data);
+				$cart->setData( $data );
 
 				$cart->save();
 

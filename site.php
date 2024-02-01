@@ -22,16 +22,16 @@ $app->get( '/', function()
 
 });
 
-$app->get("/categories/:idcategory", function($idcategory)
+$app->get( "/categories/:idcategory", function( $idcategory )
 {
 
-	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+	$page = ( isset( $_GET[ 'page' ])) ? ( int )$_GET[ 'page' ] : 1;
 
 	$category = new Category();
 
-	$category->get((int)$idcategory);
+	$category->get(( int )$idcategory );
 
-	$pagination = $category->getProductsPage($page);
+	$pagination = $category->getProductsPage( $page );
 
 	$pages = [];
 
@@ -41,7 +41,7 @@ $app->get("/categories/:idcategory", function($idcategory)
 			'page'=>$i
 		]);
 	}
-
+var_dump($page);
 	$page = new Page();
 
 	$page->setTpl("category", [
