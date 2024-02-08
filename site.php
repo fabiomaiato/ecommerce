@@ -611,7 +611,7 @@ $app->get( "/boleto/:idorder", function( $idorder )
 	$dadosboleto[ "demonstrativo3" ] = "";
 	$dadosboleto[ "instrucoes1" ] = "- Sr. Caixa, cobrar multa de 2% após o vencimento";
 	$dadosboleto[ "instrucoes2" ] = "- Receber até 10 dias após o vencimento";
-	$dadosboleto[ "instrucoes3" ] = "- Em caso de dúvidas entre em contato conosco: suporte@hcode.com.br";
+	$dadosboleto[ "instrucoes3" ] = "- Em caso de dúvidas entre em contato conosco: fabiosilbrito@gmail.comr";
 	$dadosboleto[ "instrucoes4" ] = "&nbsp; Emitido pelo sistema Projeto Loja Hcode E-commerce - www.hcode.com.br";
 
 	// DADOS OPCIONAIS DE ACORDO COM O BANCO OU CLIENTE
@@ -635,7 +635,7 @@ $app->get( "/boleto/:idorder", function( $idorder )
 
 	// SEUS DADOS
 	$dadosboleto[ "identificacao" ] = "Fabio Brito Sistemas";
-	$dadosboleto[ "cpf_cnpj" ] = "24.700.731/0001-08";
+	$dadosboleto[ "cpf_cnpj" ] = "922.286.740-87";
 	$dadosboleto[ "endereco" ] = "Rua Dona Alice, 34 - Conj. 203 - Petrópolis, 90640-110";
 	$dadosboleto[ "cidade_uf" ] = "Porto Alegre - RS";
 	$dadosboleto[ "cedente" ] = "FABIO BRITO SISTEMAS - ME";
